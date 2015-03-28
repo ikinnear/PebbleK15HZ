@@ -8,13 +8,15 @@ var base64 = require('base64');
 var debug = false;
 var Settings = require('settings');
 var myWork = require('myWork');
+var myGroupsUnassignedWork = require('myGroupsUnassignedWork');
 
 var mainMenu = new UI.Menu({
   sections: [{
     title: 'K15 Hackzone Menu',
     items: [{
       title: 'My Work'
-      //add new main menu options in here
+    }, {
+      title: 'Unassigned Work'
     }]
   }]
 });
@@ -66,7 +68,8 @@ mainMenu.on('select', function(e) {
   if(e.itemIndex===0){
     myWork.show(instance,encoded_auth,user_name);
   }
-  //add new main menu actions here
+  if(e.itemIndex===1){
+    myGroupsUnassignedWork.show(instance,encoded_auth,user_name);
+  }
   
 });
-
