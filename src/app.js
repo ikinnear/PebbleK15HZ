@@ -15,8 +15,7 @@ var mainMenu = new UI.Menu({
     title: 'K15 Hackzone Menu',
     items: [{
       title: 'My Work'
-    }, {
-      title: 'Unassigned Work'
+      //add additional main menu options here
     }]
   }]
 });
@@ -68,8 +67,6 @@ mainMenu.on('select', function(e) {
   if(e.itemIndex===0){
     myWork.show(instance,encoded_auth,user_name);
   }
-  if(e.itemIndex===1){
-    myGroupsUnassignedWork.show(instance,encoded_auth,user_name);
-  }
+  //add additional main menu actions here
   
 });
